@@ -48,6 +48,12 @@ form {
     font-family: 'Chakra Petch', sans-serif;
 }
 
+.query {
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #CBC3E3;
+}
+
 .link {
     font-size: medium;
     font-family: 'Chakra Petch', sans-serif;

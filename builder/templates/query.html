@@ -8,23 +8,25 @@
     <body>
         <div>
             <h1>Your Query</h1>
-            <p>PREFIX cidoc:&lt;http://www.cidoc-crm.org/cidoc-crm/&gt;</p>
-            <p>{{ prefixadms|safe }}</p>
-            <p>{{ prefix|safe }}</p>
-            <p> SELECT {{count|safe}} {{distinct|safe}} {{ variabletitle|safe }} {{ variablenote|safe }} {{ variableimage|safe }} {{ variableobjectname|safe }} {{ variableobjectnumber|safe }} {{ variableassociatie|safe }}{{closecount|safe}} {{ endpoint|safe }}{{ hva|safe }} {{ dmg|safe }} {{ ag|safe }} {{ stam|safe }} {{ im|safe }}</p>
-            <p>WHERE {</p>
-            <p>{{ title|safe }}</p>
-            <p>{{ filtertitle|safe }}</p>
-            <p>{{ note|safe }}</p>
-            <p>{{ filternote|safe }}</p>
-            <p>{{ image|safe }}</p>
-            <p>{{ objectname|safe }}</p>
-            <p>{{ filterobjectname|safe }}</p>
-            <p>{{ associatie|safe }}</p>
-            <p>{{ filterassociatie|safe }}</p>
-            <p>{{ objectnumber|safe }}</p>
-            <p>{{ filterobjectnumber|safe }}</p>
-            <p>} {{limit|safe}}</p>
+            <div class='query'
+                <p>PREFIX cidoc:&lt;http://www.cidoc-crm.org/cidoc-crm/&gt;</p>
+                <p>{{ prefixadms|safe }}</p>
+                <p>{{ prefix|safe }}</p>
+                <p> SELECT {{count|safe}} {{distinct|safe}} {{ variabletitle|safe }} {{ variablenote|safe }} {{ variableimage|safe }} {{ variableobjectname|safe }} {{ variableobjectnumber|safe }} {{ variableassociatie|safe }}{{closecount|safe}} {{ endpoint|safe }}{{ hva|safe }} {{ dmg|safe }} {{ ag|safe }} {{ stam|safe }} {{ im|safe }}</p>
+                <p>WHERE {</p>
+                <p>{{ title|safe }}</p>
+                <p>{{ filtertitle|safe }}</p>
+                <p>{{ note|safe }}</p>
+                <p>{{ filternote|safe }}</p>
+                <p>{{ image|safe }}</p>
+                <p>{{ objectname|safe }}</p>
+                <p>{{ filterobjectname|safe }}</p>
+                <p>{{ associatie|safe }}</p>
+                <p>{{ filterassociatie|safe }}</p>
+                <p>{{ objectnumber|safe }}</p>
+                <p>{{ filterobjectnumber|safe }}</p>
+                <p>} {{limit|safe}}</p>
+            </div>
             <h2 class="header">Try it out:</h2>
             <a href="https://stad.gent/sparql" class = 'link'>Stad Gent</a>
             <a href="https://query.linkeddatafragments.org/#datasources=https%3A%2F%2Fstad.gent%2Fsparql&query=" class="link" >Comunica</a>
