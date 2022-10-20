@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-n_@5-wa47h-x*^j@owom1e!iy&sw6^v)!$uouq_ze_!^ahv81a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'cogent-querybuilder.herokuapp.com'
+]
 
 
 # Application definition
