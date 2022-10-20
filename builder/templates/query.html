@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'templates/styles.css' %}">    
+    </head>
+    <body>
+        <div>
+            <h1>Your Query</h1>
+            <p>PREFIX cidoc:&lt;http://www.cidoc-crm.org/cidoc-crm/&gt;</p>
+            <p>{{ prefixadms|safe }}</p>
+            <p>{{ prefix|safe }}</p>
+            <p> SELECT {{count|safe}} {{distinct|safe}} {{ variabletitle|safe }} {{ variablenote|safe }} {{ variableimage|safe }} {{ variableobjectname|safe }} {{ variableobjectnumber|safe }} {{ variableassociatie|safe }}{{closecount|safe}} {{ endpoint|safe }}{{ hva|safe }} {{ dmg|safe }} {{ ag|safe }} {{ stam|safe }} {{ im|safe }}</p>
+            <p>WHERE {</p>
+            <p>{{ title|safe }}</p>
+            <p>{{ filtertitle|safe }}</p>
+            <p>{{ note|safe }}</p>
+            <p>{{ filternote|safe }}</p>
+            <p>{{ image|safe }}</p>
+            <p>{{ objectname|safe }}</p>
+            <p>{{ filterobjectname|safe }}</p>
+            <p>{{ associatie|safe }}</p>
+            <p>{{ filterassociatie|safe }}</p>
+            <p>{{ objectnumber|safe }}</p>
+            <p>{{ filterobjectnumber|safe }}</p>
+            <p>} {{limit|safe}}</p>
+            <a href=""><h2>back</h2></a>
+        </div>
+    </body>
+</html>

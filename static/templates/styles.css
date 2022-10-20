@@ -1,0 +1,49 @@
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1cm;
+}
+
+a {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.wrap {
+    max-width: 1000px;
+}
+
+form {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.check {
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid powderblue;
+}
+
+.choose {
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #CBC3E3;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.pick {
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #f3eaaf;
+}
+
+.build {
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    font-family: 'Chakra Petch', sans-serif;
+}

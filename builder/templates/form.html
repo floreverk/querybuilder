@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'templates/styles.css' %}">    
+    </head>
+    <body>
+        <div class="wrap">
+            <h1>Build your Query</h1>
+            <form method="post">
+                {% csrf_token %}
+                <p>Select which endpoints you want to query:</p>
+                <div class="grid">
+                    <div class="check">
+                        <p>All Endpoints</p>{{form.endpoints}}
+                    </div>
+                    <div class="check">
+                        <p>Huis van Alijn</p>{{form.hva}}
+                    </div>
+                    <div class="check">
+                        <p>Industriemuseum</p>{{form.im}}
+                    </div>
+                    <div class="check">
+                        <p>Designmuseum Gent</p>{{form.dmg}}
+                    </div>
+                    <div class="check">
+                        <p>STAM</p>{{form.stam}}
+                    </div>
+                    <div class="check">
+                        <p>Archief Gent</p>{{form.ag}}
+                    </div>
+                </div>
+                <p>Select which columns you want returned:</p>
+                <div class = 'grid'>
+                    <div class="choose">
+                        <p>Title</p><p>Filter (optional)</p>{{form.title}} {{form.titlefilter}}
+                    </div>
+                    <div class="choose">
+                        <p>Description</p><p>Filter (optional)</p>{{form.description}} {{form.descriptionfilter}}
+                    </div>
+                    <div class="choose">
+                        <p>Image</p>{{form.image}}
+                    </div>
+                    <div class="choose">
+                        <p>Objectnumber</p><p>Filter (optional)</p>{{form.objectnumber}} {{form.objectnumberfilter}}
+                    </div>
+                    <div class="choose">
+                        <p>Objectname</p><p>Filter (optional)</p>{{form.objectname}} {{form.objectnamefilter}}
+                    </div>
+                    <div class="choose">
+                        <p>Associatie</p><p>Filter (optional)</p>{{form.associatie}} {{form.associatiefilter}}
+                    </div>
+                </div>
+                <p>Aditional features:</p>
+                <div class='grid'>
+                    <div class='pick'>
+                        <p>Limit your result (0-1000) (optional): </p>
+                        {{form.limit}}
+                    </div>
+                    <div class='pick'>
+                        <p>Get only unique results (optional): </p>
+                        {{form.distinct}}
+                    </div>
+                    <div class='pick'>
+                        <p>Count your results (optional): </p>
+                        {{form.count}}
+                    </div>
+                </div>
+                <button type="submit" class="build">Build</button>
+            </form>
+        </div>
+    </body>
+</html>
