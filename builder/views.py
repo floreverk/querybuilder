@@ -15,7 +15,7 @@ def buildquery(request):
             else:
                 dmg= ''
             if form.cleaned_data['ag'] == True:
-                ag = 'FORM &lt;http://stad.gent/ldes/archief&gt;'
+                ag = 'FROM &lt;http://stad.gent/ldes/archief&gt;'
             else:
                 ag= ''
             if form.cleaned_data['hva'] == True:
