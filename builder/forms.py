@@ -20,6 +20,8 @@ class EndpointForm(forms.Form):
     associatiefilter = forms.CharField(required=False)
     objectnumber = forms.BooleanField(required=False)
     objectnumberfilter = forms.CharField(required=False)
+    vervaardiger = forms.BooleanField(required=False)
+    vervaardigerfilter = forms.CharField(required=False)
     distinct = forms.BooleanField(required=False)
     count = forms.BooleanField(required=False)
 

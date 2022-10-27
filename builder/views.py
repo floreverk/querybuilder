@@ -133,21 +133,42 @@ def buildquery(request):
                 variableobjectnumber = ''
                 filterobjectnumber = ''
                 prefixadms = ''
+
+            if form.cleaned_data['vervaardiger'] == True:
+                vervaardiger = '''?o cidoc:P108i_was_produced_by ?production.</br>
+                ?production cidoc:P14_carried_out_by ?producer.</br>
+                ?producer la:equivalent ?equivalent.</br>
+                ?equivalent rdfs:label ?creator.
+                '''
+                variablevervaardiger = '?creator'
+                prefixla = 'PREFIX la:&lt;https://linked.art/ns/terms/&gt;'
+                if form.cleaned_data['vervaardigerfilter'] == '':
+                    filtervervaardiger = ''
+                else:
+                    vervaardigerfilter = form.cleaned_data['vervaardigerfilter']
+                    filtervervaardiger = 'FILTER (regex(?creator, "^'+vervaardigerfilter+'$", "i"))'
+            else:
+                vervaardiger = ''
+                variablevervaardiger = ''
+                filtervervaardiger = ''
+                prefixla = ''
                         
             if form.cleaned_data['associatie'] or form.cleaned_data['objectname'] or form.cleaned_data['objectnumber']== True:
                 prefix = 'PREFIX skos:&lt;http://www.w3.org/2004/02/skos/core#&gt;'
             else:
                 prefix = ''
-            
+
+           
             return render(request, 'query.html', {'endpoint': endpoint, 'hva': hva, 'dmg': dmg, 'im': im, 'ag': ag, 'stam': stam, 
             'limit': limit, 'distinct': distinct, 'count': count, 'closecount': closecount,
             'variabletitle': variabletitle, 'title': title, 'filtertitle': filtertitle, 
             'note': note, 'variablenote': variablenote, 'filternote': filternote, 
             'image': image, 'variableimage': variableimage, 
-            'prefix': prefix, 'prefixadms': prefixadms,
+            'prefix': prefix, 'prefixadms': prefixadms, 'prefixla': prefixla,
             'objectname': objectname, 'variableobjectname': variableobjectname, 'filterobjectname': filterobjectname, 
             'associatie': associatie, 'variableassociatie': variableassociatie, 'filterassociatie': filterassociatie,
-            'objectnumber': objectnumber, 'variableobjectnumber': variableobjectnumber, 'filterobjectnumber': filterobjectnumber})
+            'objectnumber': objectnumber, 'variableobjectnumber': variableobjectnumber, 'filterobjectnumber': filterobjectnumber,
+            'vervaardiger': vervaardiger, 'variablevervaardiger': variablevervaardiger, 'filtervervaardiger': filtervervaardiger})
             
     form = EndpointForm()
    
