@@ -22,6 +22,8 @@ class EndpointForm(forms.Form):
     objectnumberfilter = forms.CharField(required=False)
     vervaardiger = forms.BooleanField(required=False)
     vervaardigerfilter = forms.CharField(required=False)
+    datum = forms.BooleanField(required=False)
+    datumfilter = forms.CharField(required=False)
     distinct = forms.BooleanField(required=False)
     count = forms.BooleanField(required=False)
 

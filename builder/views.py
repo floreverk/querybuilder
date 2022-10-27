@@ -146,7 +146,7 @@ def buildquery(request):
                     filtervervaardiger = ''
                 else:
                     vervaardigerfilter = form.cleaned_data['vervaardigerfilter']
-                    filtervervaardiger = 'FILTER (regex(?creator, "^'+vervaardigerfilter+'$", "i"))'
+                    filtervervaardiger = 'FILTER (regex(?creator, "'+vervaardigerfilter+'", "i"))'
             else:
                 vervaardiger = ''
                 variablevervaardiger = ''
@@ -158,6 +158,20 @@ def buildquery(request):
             else:
                 prefix = ''
 
+            if form.cleaned_data['datum'] == True:
+                datum = '''?o cidoc:P108i_was_produced_by ?produced.</br>
+                ?produced cidoc:P4_has_time-span ?timespan.</br>
+                '''
+                variabledatum = '?timespan'
+                if form.cleaned_data['datumfilter'] == '':
+                    filterdatum = ''
+                else:
+                    datumfilter = form.cleaned_data['datumfilter']
+                    filterdatum = 'FILTER (regex(?timespan, "'+datumfilter+'", "i"))'
+            else:
+                datum = ''
+                variabledatum = ''
+                filterdatum = ''
            
             return render(request, 'query.html', {'endpoint': endpoint, 'hva': hva, 'dmg': dmg, 'im': im, 'ag': ag, 'stam': stam, 
             'limit': limit, 'distinct': distinct, 'count': count, 'closecount': closecount,
@@ -168,7 +182,8 @@ def buildquery(request):
             'objectname': objectname, 'variableobjectname': variableobjectname, 'filterobjectname': filterobjectname, 
             'associatie': associatie, 'variableassociatie': variableassociatie, 'filterassociatie': filterassociatie,
             'objectnumber': objectnumber, 'variableobjectnumber': variableobjectnumber, 'filterobjectnumber': filterobjectnumber,
-            'vervaardiger': vervaardiger, 'variablevervaardiger': variablevervaardiger, 'filtervervaardiger': filtervervaardiger})
+            'vervaardiger': vervaardiger, 'variablevervaardiger': variablevervaardiger, 'filtervervaardiger': filtervervaardiger,
+            'datum': datum, 'variabledatum': variabledatum, 'filterdatum': filterdatum})
             
     form = EndpointForm()
    

@@ -13,7 +13,7 @@
                 <p>{{ prefixadms|safe }}</p>
                 <p>{{ prefix|safe }}</p>
                 <p>{{ prefixla|safe }}</p>
-                <p> SELECT {{count|safe}} {{distinct|safe}} {{ variabletitle|safe }} {{ variablenote|safe }} {{ variableimage|safe }} {{ variableobjectname|safe }} {{ variableobjectnumber|safe }} {{ variableassociatie|safe }}{{ variablevervaardiger|safe }}{{closecount|safe}} {{ endpoint|safe }}{{ hva|safe }} {{ dmg|safe }} {{ ag|safe }} {{ stam|safe }} {{ im|safe }}</p>
+                <p> SELECT {{count|safe}} {{distinct|safe}} {{ variabletitle|safe }} {{ variablenote|safe }} {{ variableimage|safe }} {{ variableobjectname|safe }} {{ variableobjectnumber|safe }} {{ variableassociatie|safe }}{{ variablevervaardiger|safe }}{{ variabledatum|safe }}{{closecount|safe}} {{ endpoint|safe }}{{ hva|safe }} {{ dmg|safe }} {{ ag|safe }} {{ stam|safe }} {{ im|safe }}</p>
                 <p>WHERE {</p>
                 <p>{{ title|safe }}</p>
                 <p>{{ filtertitle|safe }}</p>
@@ -28,6 +28,8 @@
                 <p>{{ filterobjectnumber|safe }}</p>
                 <p>{{ vervaardiger|safe }}</p>
                 <p>{{ filtervervaardiger|safe }}</p>
+                <p>{{ datum|safe }}</p>
+                <p>{{ filterdatum|safe }}</p>
                 <p>} {{limit|safe}}</p>
             </div>
             <h2 class="header">Try it out:</h2>
